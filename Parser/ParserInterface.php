@@ -1,8 +1,8 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Parser;
+namespace amevirtuelle\Component\BankStatement\Parser;
 
-use JakubZapletal\Component\BankStatement\Statement\StatementInterface;
+use amevirtuelle\Component\BankStatement\Statement\StatementInterface;
 
 interface ParserInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Tests\Parser;
+namespace amevirtuelle\Component\BankStatement\Tests\Parser;
 
 class CSVParserTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var string
      */
-    protected $parserClassName = '\JakubZapletal\Component\BankStatement\Parser\CSVParser';
+    protected $parserClassName = '\amevirtuelle\Component\BankStatement\Parser\CSVParser';
 
     public function testParseFile()
     {

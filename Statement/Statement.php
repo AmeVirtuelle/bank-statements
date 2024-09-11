@@ -1,8 +1,8 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Statement;
+namespace amevirtuelle\Component\BankStatement\Statement;
 
-use JakubZapletal\Component\BankStatement\Statement\Transaction\TransactionInterface;
+use amevirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
 
 class Statement implements StatementInterface, \Countable, \Iterator
 {
@@ -54,7 +54,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return float
      */
-    public function getBalance()
+    public function getBalance(): float
     {
         return $this->balance;
     }
@@ -64,7 +64,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setBalance($balance)
+    public function setBalance($balance): self
     {
         $this->balance = (float) $balance;
 
@@ -74,7 +74,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return float
      */
-    public function getCreditTurnover()
+    public function getCreditTurnover(): float
     {
         return $this->creditTurnover;
     }
@@ -84,7 +84,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setCreditTurnover($creditTurnover)
+    public function setCreditTurnover($creditTurnover): self
     {
         $this->creditTurnover = (float) $creditTurnover;
 
@@ -94,7 +94,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return \DateTime|null
      */
-    public function getDateCreated()
+    public function getDateCreated(): ?\DateTime
     {
         return $this->dateCreated;
     }
@@ -104,7 +104,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setDateCreated(\DateTime $dateCreated)
+    public function setDateCreated(\DateTime $dateCreated): self
     {
         $this->dateCreated = $dateCreated;
 
@@ -114,7 +114,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return string
      */
-    public function getSerialNumber()
+    public function getSerialNumber(): string
     {
         return $this->serialNumber;
     }
@@ -124,7 +124,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setSerialNumber($serialNumber)
+    public function setSerialNumber($serialNumber): self
     {
         $this->serialNumber = $serialNumber;
 
@@ -134,7 +134,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return float
      */
-    public function getDebitTurnover()
+    public function getDebitTurnover(): float
     {
         return $this->debitTurnover;
     }
@@ -144,7 +144,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setDebitTurnover($debitTurnover)
+    public function setDebitTurnover($debitTurnover): self
     {
         $this->debitTurnover = (float) $debitTurnover;
 
@@ -154,7 +154,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return string
      */
-    public function getAccountNumber()
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -164,7 +164,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setAccountNumber($accountNumber)
+    public function setAccountNumber($accountNumber): self
     {
         $this->accountNumber = $accountNumber;
 
@@ -176,7 +176,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return array
      */
-    public function getParsedAccountNumber()
+    public function getParsedAccountNumber(): array
     {
         $parsedAccountNumber = array(
             'prefix'   => null,
@@ -210,7 +210,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return \DateTime
      */
-    public function getDateLastBalance()
+    public function getDateLastBalance(): \DateTime
     {
         return $this->dateLastBalance;
     }
@@ -220,7 +220,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setDateLastBalance(\DateTime $dateLastBalance)
+    public function setDateLastBalance(\DateTime $dateLastBalance): self
     {
         $this->dateLastBalance = $dateLastBalance;
 
@@ -230,7 +230,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return float
      */
-    public function getLastBalance()
+    public function getLastBalance(): float
     {
         return $this->lastBalance;
     }
@@ -240,7 +240,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function setLastBalance($lastBalance)
+    public function setLastBalance($lastBalance): self
     {
         $this->lastBalance = (float) $lastBalance;
 
@@ -250,7 +250,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @return TransactionInterface[]
      */
-    public function getTransactions()
+    public function getTransactions(): array
     {
         return $this->transactions;
     }
@@ -260,7 +260,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function addTransaction(TransactionInterface $transaction)
+    public function addTransaction(TransactionInterface $transaction): self
     {
         $added = false;
 
@@ -283,7 +283,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return $this
      */
-    public function removeTransaction(TransactionInterface $transaction)
+    public function removeTransaction(TransactionInterface $transaction): self
     {
         foreach ($this->transactions as $key => $addedTransaction) {
             if ($transaction === $addedTransaction) {
@@ -300,7 +300,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->transactions);
     }
@@ -310,7 +310,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return TransactionInterface
      */
-    public function current()
+    public function current(): TransactionInterface
     {
         return current($this->transactions);
     }
@@ -320,7 +320,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return key($this->transactions);
     }
@@ -328,21 +328,21 @@ class Statement implements StatementInterface, \Countable, \Iterator
     /**
      * @see \Iterator::next()
      *
-     * @return TransactionInterface
+     * @return void
      */
-    public function next()
+    public function next(): void
     {
-        return next($this->transactions);
+        next($this->transactions);
     }
 
     /**
      * @see \Iterator::rewind()
      *
-     * @return mixed
+     * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
-        return reset($this->transactions);
+        reset($this->transactions);
     }
 
     /**
@@ -350,7 +350,7 @@ class Statement implements StatementInterface, \Countable, \Iterator
      *
      * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return key($this->transactions) !== null;
     }

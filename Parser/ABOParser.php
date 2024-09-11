@@ -1,17 +1,17 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Parser;
+namespace amevirtuelle\Component\BankStatement\Parser;
 
-use JakubZapletal\Component\BankStatement\Statement\Statement;
-use JakubZapletal\Component\BankStatement\Statement\Transaction\Transaction;
+use amevirtuelle\Component\BankStatement\Statement\Statement;
+use amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction;
 
 /**
  * The ABO format is commonly used for exchanging financial messages in the Czech Republic and Slovakia
  *
- * @see https://github.com/jakubzapletal/bank-statements/blob/master/doc/abo.md
+ * @see https://github.com/amevirtuelle/bank-statements/blob/master/doc/abo.md
  *
  * Class Statement
- * @package JakubZapletal\Component\BankStatement\Parser
+ * @package amevirtuelle\Component\BankStatement\Parser
  */
 class ABOParser extends Parser
 {
@@ -117,7 +117,7 @@ class ABOParser extends Parser
      * 15 | Filler                      | F | 14 | (space)              | 4
      * 16 | End-of-record character     | F | 2  | CR LF                |
      *
-     * @see https://github.com/jakubzapletal/bank-statements/blob/master/doc/abo.md
+     * @see https://github.com/amevirtuelle/bank-statements/blob/master/doc/abo.md
      *
      * @param string $line
      */
@@ -193,7 +193,7 @@ class ABOParser extends Parser
      * 14 | Due date                | F  | 6  | ddmmyy               |
      * 15 | End-of-record character | F  | 2  | CR LF                |
      *
-     * @see https://github.com/jakubzapletal/bank-statements/blob/master/doc/abo.md
+     * @see https://github.com/amevirtuelle/bank-statements/blob/master/doc/abo.md
      *
      * @param string $line
      *

@@ -1,8 +1,8 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Parser\ABO;
+namespace amevirtuelle\Component\BankStatement\Parser\ABO;
 
-use JakubZapletal\Component\BankStatement\Parser\ABOParser;
+use amevirtuelle\Component\BankStatement\Parser\ABOParser;
 
 class CeskaSporitelnaCZParser extends ABOParser
 {

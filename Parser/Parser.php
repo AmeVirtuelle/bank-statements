@@ -1,9 +1,9 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Parser;
+namespace amevirtuelle\Component\BankStatement\Parser;
 
-use JakubZapletal\Component\BankStatement\Statement\Statement;
-use JakubZapletal\Component\BankStatement\Statement\Transaction\Transaction;
+use amevirtuelle\Component\BankStatement\Statement\Statement;
+use amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction;
 
 abstract class Parser implements ParserInterface
 {

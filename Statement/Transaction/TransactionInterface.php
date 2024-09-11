@@ -1,6 +1,6 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Statement\Transaction;
+namespace amevirtuelle\Component\BankStatement\Statement\Transaction;
 
 interface TransactionInterface
 {

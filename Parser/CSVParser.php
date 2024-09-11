@@ -1,8 +1,8 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Parser;
+namespace amevirtuelle\Component\BankStatement\Parser;
 
-use JakubZapletal\Component\BankStatement\Statement\Statement;
+use amevirtuelle\Component\BankStatement\Statement\Statement;
 
 abstract class CSVParser extends Parser
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace JakubZapletal\Component\BankStatement\Statement;
+namespace amevirtuelle\Component\BankStatement\Statement;
 
-use JakubZapletal\Component\BankStatement\Statement\Transaction\TransactionInterface;
+use amevirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
 
 /**
  * Interface StatementInterface
- * @package JakubZapletal\Component\BankStatement\Statement
+ * @package amevirtuelle\Component\BankStatement\Statement
  */
 interface StatementInterface
 {
