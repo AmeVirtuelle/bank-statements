@@ -1,9 +1,9 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Tests\Parser;
+namespace AmeVirtuelle\Component\BankStatement\Tests\Parser;
 
-use amevirtuelle\Component\BankStatement\Parser\Parser;
-use amevirtuelle\Component\BankStatement\Statement\Statement;
+use AmeVirtuelle\Component\BankStatement\Parser\Parser;
+use AmeVirtuelle\Component\BankStatement\Statement\Statement;
 
 class ParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->parser = $this->getMockForAbstractClass('\amevirtuelle\Component\BankStatement\Parser\Parser');
+        $this->parser = $this->getMockForAbstractClass('\AmeVirtuelle\Component\BankStatement\Parser\Parser');
     }
 
     public function testGetStatement()
@@ -25,7 +25,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
         $property->setValue($this->parser, new Statement());
 
         $this->assertInstanceOf(
-            '\amevirtuelle\Component\BankStatement\Statement\Statement',
+            '\AmeVirtuelle\Component\BankStatement\Statement\Statement',
             $this->parser->getStatement()
         );
     }
@@ -37,7 +37,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
         $method->setAccessible(true);
 
         $this->assertInstanceOf(
-            '\amevirtuelle\Component\BankStatement\Statement\Statement',
+            '\AmeVirtuelle\Component\BankStatement\Statement\Statement',
             $method->invoke($this->parser)
         );
     }
@@ -49,7 +49,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
         $method->setAccessible(true);
 
         $this->assertInstanceOf(
-            '\amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction',
+            '\AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction',
             $method->invoke($this->parser)
         );
     }

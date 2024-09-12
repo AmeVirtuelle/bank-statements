@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Tests\Statement\Transaction;
+namespace AmeVirtuelle\Component\BankStatement\Tests\Statement\Transaction;
 
-use amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction;
+use AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction;
 
 class TransactionTest extends \PHPUnit_Framework_TestCase
 {

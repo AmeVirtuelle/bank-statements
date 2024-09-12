@@ -1,9 +1,9 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Parser;
+namespace AmeVirtuelle\Component\BankStatement\Parser;
 
 use Symfony\Component\DomCrawler\Crawler;
-use amevirtuelle\Component\BankStatement\Statement\Statement;
+use AmeVirtuelle\Component\BankStatement\Statement\Statement;
 
 abstract class XMLParser extends Parser
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Parser;
+namespace AmeVirtuelle\Component\BankStatement\Parser;
 
-use amevirtuelle\Component\BankStatement\Statement\StatementInterface;
+use AmeVirtuelle\Component\BankStatement\Statement\StatementInterface;
 
 interface ParserInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Parser\XML;
+namespace AmeVirtuelle\Component\BankStatement\Parser\XML;
 
-use amevirtuelle\Component\BankStatement\Parser\XMLParser;
+use AmeVirtuelle\Component\BankStatement\Parser\XMLParser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\CssSelector\CssSelector;
 
@@ -31,7 +31,7 @@ class CSOBCZParser extends XMLParser
     /**
      * @param Crawler $crawler
      *
-     * @return \amevirtuelle\Component\BankStatement\Statement\Statement
+     * @return \AmeVirtuelle\Component\BankStatement\Statement\Statement
      */
     protected function parseCrawler(Crawler $crawler)
     {
@@ -194,7 +194,7 @@ class CSOBCZParser extends XMLParser
      *
      * @param Crawler $crawler
      *
-     * @return \amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction
+     * @return \AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction
      */
     protected function parseTransactionNode(Crawler $crawler = null)
     {

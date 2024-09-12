@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Tests\Parser\XML;
+namespace AmeVirtuelle\Component\BankStatement\Tests\Parser\XML;
 
-use amevirtuelle\Component\BankStatement\Parser\XML\CSOBCZParser;
+use AmeVirtuelle\Component\BankStatement\Parser\XML\CSOBCZParser;
 use Symfony\Component\DomCrawler\Crawler;
 
 class CSOBCZParserTest extends \PHPUnit_Framework_TestCase
@@ -10,7 +10,7 @@ class CSOBCZParserTest extends \PHPUnit_Framework_TestCase
     /**
      * @var string
      */
-    protected $parserClassName = '\amevirtuelle\Component\BankStatement\Parser\XML\CSOBCZParser';
+    protected $parserClassName = '\AmeVirtuelle\Component\BankStatement\Parser\XML\CSOBCZParser';
 
     public function testParseContent()
     {
@@ -92,7 +92,7 @@ class CSOBCZParserTest extends \PHPUnit_Framework_TestCase
         $statement = $method->invokeArgs($parser, array($crawler));
 
         $this->assertInstanceOf(
-            '\amevirtuelle\Component\BankStatement\Statement\Statement',
+            '\AmeVirtuelle\Component\BankStatement\Statement\Statement',
             $statement
         );
 

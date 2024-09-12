@@ -3,7 +3,7 @@
     "description": "The PHP library to parse bank account statements",
     "license": "MIT",
     "autoload": {
-        "psr-4": { "Amevirtuelle\\Component\\BankStatement\\": "" }
+        "psr-4": { "AmeVirtuelle\\Component\\BankStatement\\": "" }
     },
     "require": {
         "php": ">=5.3.0",

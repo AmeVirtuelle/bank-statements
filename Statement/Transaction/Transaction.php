@@ -1,6 +1,6 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Statement\Transaction;
+namespace AmeVirtuelle\Component\BankStatement\Statement\Transaction;
 
 class Transaction implements TransactionInterface
 {

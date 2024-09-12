@@ -1,12 +1,12 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Statement;
+namespace AmeVirtuelle\Component\BankStatement\Statement;
 
-use amevirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
+use AmeVirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
 
 /**
  * Interface StatementInterface
- * @package amevirtuelle\Component\BankStatement\Statement
+ * @package AmeVirtuelle\Component\BankStatement\Statement
  */
 interface StatementInterface
 {

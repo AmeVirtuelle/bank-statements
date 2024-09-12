@@ -1,15 +1,15 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Tests\Parser;
+namespace AmeVirtuelle\Component\BankStatement\Tests\Parser;
 
-use amevirtuelle\Component\BankStatement\Parser\ABOParser;
+use AmeVirtuelle\Component\BankStatement\Parser\ABOParser;
 
 class ABOParserTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var string
      */
-    protected $parserClassName = '\amevirtuelle\Component\BankStatement\Parser\ABOParser';
+    protected $parserClassName = '\AmeVirtuelle\Component\BankStatement\Parser\ABOParser';
 
     public function testParseFile()
     {
@@ -94,7 +94,7 @@ class ABOParserTest extends \PHPUnit_Framework_TestCase
         $statement = $method->invokeArgs($parser, array($fileObject));
 
         $this->assertInstanceOf(
-            '\amevirtuelle\Component\BankStatement\Statement\Statement',
+            '\AmeVirtuelle\Component\BankStatement\Statement\Statement',
             $statement
         );
 

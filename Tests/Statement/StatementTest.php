@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Tests\Statement;
+namespace AmeVirtuelle\Component\BankStatement\Tests\Statement;
 
-use amevirtuelle\Component\BankStatement\Statement\Statement;
+use AmeVirtuelle\Component\BankStatement\Statement\Statement;
 
 class StatementTest extends \PHPUnit_Framework_TestCase
 {
@@ -108,14 +108,14 @@ class StatementTest extends \PHPUnit_Framework_TestCase
 
     public function testTransactions()
     {
-        $transactionMock_1 = $this->getMock('amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
+        $transactionMock_1 = $this->getMock('AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
         $transactionMock_1
             ->expects($this->any())
             ->method('getReceiptId')
             ->will($this->returnValue(11))
         ;
 
-        $transactionMock_2 = $this->getMock('amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
+        $transactionMock_2 = $this->getMock('AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
         $transactionMock_2
             ->expects($this->any())
             ->method('getReceiptId')
@@ -160,7 +160,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase
 
     public function testRemoveTransactionException()
     {
-        $transactionMock = $this->getMock('amevirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
+        $transactionMock = $this->getMock('AmeVirtuelle\Component\BankStatement\Statement\Transaction\Transaction');
 
         $this->statement->addTransaction($transactionMock);
 

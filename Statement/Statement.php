@@ -1,8 +1,8 @@
 <?php
 
-namespace amevirtuelle\Component\BankStatement\Statement;
+namespace AmeVirtuelle\Component\BankStatement\Statement;
 
-use amevirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
+use AmeVirtuelle\Component\BankStatement\Statement\Transaction\TransactionInterface;
 
 class Statement implements StatementInterface, \Countable, \Iterator
 {

@@ -10,7 +10,7 @@
 >
 
     <testsuites>
-        <testsuite name="amevirtuelle_Component_BankStatement_TestSuite">
+        <testsuite name="AmeVirtuelle_Component_BankStatement_TestSuite">
             <directory>./Tests/</directory>
         </testsuite>
     </testsuites>
