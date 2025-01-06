@@ -141,7 +141,7 @@ class ABOParser extends Parser
         $this->statement->setLastBalance($lastBalance);
 
         # Balance
-        $balance = ltrim(substr($line, 60, 14), '0') / 100;
+        $balance = intval(ltrim(substr($line, 60, 14), '0')) / 100;
         $balanceSign = substr($line, 74, 1);
         if ($balanceSign === '-') {
             $balance *= -1;
@@ -149,7 +149,7 @@ class ABOParser extends Parser
         $this->statement->setBalance($balance);
 
         # Debit turnover
-        $debitTurnover = ltrim(substr($line, 75, 14), '0') / 100;
+        $debitTurnover = intval(ltrim(substr($line, 75, 14), '0')) / 100;
         $debitTurnoverSign = substr($line, 89, 1);
         if ($debitTurnoverSign === '-') {
             $debitTurnover *= -1;
