@@ -36,6 +36,20 @@ class ABOParser extends Parser
         return $this->parseFileObject($fileObject);
     }
 
+    public function parseFile2($filePath)
+    {
+        $content = file_get_contents($filePath);
+
+        if (is_string($content) === false) {
+            throw new \InvalidArgumentException('Argument "$content" isn\'t a string type');
+        }
+
+        $fileObject = new \SplTempFileObject();
+        $fileObject->fwrite($content."\n\0");
+
+        return $this->parseFileObject($fileObject);
+    }
+
     /**
      * @param string $content
      *
