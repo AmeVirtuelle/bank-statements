@@ -4,6 +4,8 @@ namespace AmeVirtuelle\Component\BankStatement\Statement\Transaction;
 
 class Transaction implements TransactionInterface
 {
+    protected $accountNumber;
+
     /**
      * @var string
      */
@@ -48,6 +50,18 @@ class Transaction implements TransactionInterface
      * @var \DateTime
      */
     protected $dateCreated;
+
+    public function getAccountNumber()
+    {
+        return $this->accountNumber;
+    }
+
+    public function setAccountNumber($accountNumber)
+    {
+        $this->accountNumber = $accountNumber;
+
+        return $this;
+    }
 
     /**
      * @return string

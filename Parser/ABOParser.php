@@ -247,6 +247,10 @@ class ABOParser extends Parser
         $constantSymbol = ltrim(substr($line, 77, 4), '0');
         $transaction->setConstantSymbol($constantSymbol);
 
+        # account number
+        $accountNumber = ltrim(substr($line, 3, 16), '0');
+        $transaction->setAccountNumber($accountNumber);
+
         # Counter account number
         $counterAccountNumber = ltrim(substr($line, 19, 16), '0');
         $codeOfBank = substr($line, 73, 4);

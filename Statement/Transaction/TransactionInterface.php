@@ -4,6 +4,9 @@ namespace AmeVirtuelle\Component\BankStatement\Statement\Transaction;
 
 interface TransactionInterface
 {
+
+    public function getAccountNumber();
+    public function setAccountNumber($accountNumber);
     /**
      * @return string
      */
