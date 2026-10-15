@@ -12,6 +12,13 @@ class CSVParser extends Parser
 
     private $csvFields = array();
     private $firstDataLine = 0;
+    private $firstDataLineContent = '';
+
+
+    public function getFileContent( $filePath )
+    {
+        return new \SplFileObject($filePath);
+    }
 
     /**
      * @param string $filePath
@@ -44,6 +51,40 @@ class CSVParser extends Parser
     public function setFirstDataLine( $lineNumber )
     {
         $this->firstDataLine = $lineNumber;
+    }
+
+    public function setFirstDataLineContent( $content )
+    {
+        $this->firstDataLineContent = $content;
+    }
+
+    public function setFirstDataLineByContent( $text, $fileObject )
+    {
+        foreach ( $fileObject as $lineNumber => $line ) {
+            if (strpos($line, $text) !== false) {
+                $this->setFirstDataLine( $lineNumber + 1 );
+                $this->setFirstDataLineContent( $line );
+            }
+        }
+    }
+
+    public function setCSVFields2( $csvFields, $lineContent  ) {
+        $fields2 = str_getcsv($lineContent, ";");
+        $fields = array();
+
+        foreach ( $fields2 as $key=>$row ) {
+            $fields[trim($row)] = $key;
+        }
+
+        foreach ( $csvFields as $key => $value ) {
+
+            foreach ( $value as $value2 ) {
+                if ( isset( $fields[ $value2 ] ) ) {
+                    $this->csvFields[ $key ] = $fields[ $value2 ];
+                }
+            }
+        }
+
     }
 
     /**
@@ -105,7 +146,7 @@ class CSVParser extends Parser
      */
     protected function getLineType($line)
     {
-        $csvLine = str_getcsv($line, ";");
+        $csvLine = str_getcsv($line, ";", '"' );
 
         if ( !empty( $csvLine[0] ) ) {
             switch (substr($line, 0, 5)) {
@@ -127,7 +168,8 @@ class CSVParser extends Parser
         $transaction->setReceiptId( $csvLine[ $this->csvFields['receiptId'] ] );
 
         # Debit / Credit
-        $amount = floatval( str_replace( ',', '.', $csvLine[ $this->csvFields['amount'] ] ) );
+        $amount = str_replace( ' ', '', $csvLine[ $this->csvFields['amount'] ] );
+        $amount = floatval( str_replace( ',', '.', $amount ) );
 
         if ( $amount > 0 ) {
             $transaction->setCredit( $amount );
@@ -179,5 +221,13 @@ class CSVParser extends Parser
         $transaction->setDateCreated($dateCreated);
 
         return $transaction;
+    }
+
+    public function getFirstDataLine() {
+        return $this->firstDataLine;
+    }
+
+    public function getFirstDataLineContent() {
+        return $this->firstDataLineContent;
     }
 }
